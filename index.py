@@ -50,14 +50,14 @@ while True:
                         break
 
                 while True:
-                    classificacao = input('\nDigite o nome do evento:')
+                    classificacao = input('\nDigite a classificação do evento:')
                     if classificacao == '':
                         print('Este campo não pode estar vazio! ')
                     else:
                         break
     
                 while True:
-                    local_evento = input('\nDigite o nome do evento:')
+                    local_evento = input('\nDigite o local do evento:')
                     if local_evento == '':
                         print('Este campo não pode estar vazio! ')
                     else:
