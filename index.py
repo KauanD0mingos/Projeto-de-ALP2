@@ -1,5 +1,5 @@
 from cadastro_usu import cadastro
-from evento import cadastro_evento, buscar
+from evento import cadastro_evento, buscar, listar
 from login import login
 
 usuarios = [['kauan', '@gmail.com', 'k12345']]
@@ -67,5 +67,8 @@ while True:
             elif opcao == '2':
                 nome_busca = input('Digite o nome do evento que deseja buscar: ')
                 buscar.buscar_evento(nome_busca, eventos)
+                
+            elif opcao == '3':
+                listar.listar_evento(eventos)
     else:
         print('Opção inválida. Por favor, escolha 1 ou 2.')
