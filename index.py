@@ -24,7 +24,7 @@ while True:
         login.login(email, senha, usuarios)
         
         while True:
-            print('[ 1 ] - Cadastro de Evento')
+            print('\n[ 1 ] - Cadastro de Evento')
             print('[ 2 ] - Buscar Evento')
             print('[ 3 ] - Listar Eventos')
             print('[ 4 ] - Remover Evento')
