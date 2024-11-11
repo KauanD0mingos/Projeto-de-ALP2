@@ -29,7 +29,7 @@ def cadastrar_eventos(nome_evento, data, classificacao, local_evento, lista_even
         else:
             break
         return True
-
-    evento = [nome_evento, f"{dia}/{mes}/{ano}", classificacao, local_evento]
+    
+    evento = [nome_evento, f"{dia}/{mes}/{ano}", classificacao, local_evento, []]
     lista_eventos.append(evento)
     print(f'\nEvento {nome_evento} cadastrado com sucesso!')

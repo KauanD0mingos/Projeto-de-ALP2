@@ -1,9 +1,9 @@
 from cadastro_usu import cadastro
-from evento import cadastro_evento, buscar, listar
+from evento import cadastro_evento, buscar, listar, participar, listar_partici
 from login import login
 
 usuarios = [['kauan', '@gmail.com', 'k12345']]
-eventos = [['semana academica', '04/11/2024', 'livre', 'faculdade']]
+eventos = [['semana academica', '04/11/2024', 'livre', 'faculdade', []]]
 
 while True:
     print('  [     Event List     ]')
@@ -70,5 +70,20 @@ while True:
                 
             elif opcao == '3':
                 listar.listar_evento(eventos)
+                
+            elif opcao == '5':
+                nome_evento = input('Digite o nome do evento que deseja participar? ')
+                nome = input('Digite seu nome? ')
+                participar.participar_evento(nome_evento, nome, eventos)
+                
+            elif opcao == '6':
+                opcao = input('Digite o (1) para listar de um evento especifico ou (2) para listar todos? ')
+                if opcao == '1':
+                    nome_evento = input('Digite o nome do evento que deseja listar os participantes: ')
+                    listar_partici.listar_participantes(nome_evento, eventos)
+                elif opcao == '2':
+                    listar_partici.listar_todos(eventos)
+                else:
+                    print('Opção inválida! ')
     else:
         print('Opção inválida. Por favor, escolha 1 ou 2.')
