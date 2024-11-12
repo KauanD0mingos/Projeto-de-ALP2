@@ -1,9 +1,9 @@
 def cadastrar_usuario(nome, email, senha, usuarios):
     if nome == '':
-        print('\n\033[1;31mDigite um nome válido\033[m\n')
+        print('\nDigite um nome válido')
         return
     if '@gmail.com' not in email.lower() and '@gmail.edu' not in email.lower() and '@gmail.gov' not in email.lower():
-        print('\t\n\033[1;31mE-mail inválido! Digite no formato (@gmail.)\033[m\n')
+        print('\nE-mail inválido! Digite no formato (@gmail.)')
         return
     if senha.isdigit() or len(senha) < 5:
         print('\nSua senha deve conter letras e números e ter pelo menos 5 caracteres!')

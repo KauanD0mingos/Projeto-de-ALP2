@@ -1,9 +1,9 @@
 from cadastro_usu import cadastro
-from evento import cadastro_evento, buscar, listar, participar, listar_partici
+from evento import cadastro_evento, buscar, listar, participar, listar_partici, valor_total, remover
 from login import login
 
 usuarios = [['kauan', '@gmail.com', 'k12345']]
-eventos = [['semana academica', '04/11/2024', 'livre', 'faculdade', []]]
+eventos = [['semana academica', '04/11/2024', 'livre', 'faculdade', [], 50.00]]
 
 while True:
     print('  [     Event List     ]')
@@ -19,7 +19,7 @@ while True:
     
         
     elif opcao == '2':
-        email = input('Digite seu E-mail: ')
+        email = input('\nDigite seu E-mail: ')
         senha = input('Digite sua senha: ')
         login.login(email, senha, usuarios)
         
@@ -32,6 +32,7 @@ while True:
             print('[ 6 ] - Listar Participantes do Evento')
             print('[ 7 ] - Verificar Valor Arrecadado')
             print('[ 8 ] - Funcionalidade extra (use criatividade)')
+            print('[ 0 ] - Sair ')
             
             opcao = input('\nDigite a opção desejada: ')
             if opcao  == '1':
@@ -71,8 +72,16 @@ while True:
             elif opcao == '3':
                 listar.listar_evento(eventos)
                 
+            elif opcao == '4':
+                nome_evento = input('Digite o nome do evento que deseja remover: ')
+                remover.remover_evento(nome_evento, eventos)
+                
             elif opcao == '5':
-                nome_evento = input('Digite o nome do evento que deseja participar? ')
+                print('\n[ Catálogo de Eventos Disponíveis ]')
+                for evento in eventos:
+                    print(f'\nNome: {evento[0]}, Data: {evento[1]}, Classificação: {evento[2]}, Local: {evento[3]}, valor: {evento[5]} R$ ')
+        
+                nome_evento = input('\nDigite o nome do evento que deseja participar? ')
                 nome = input('Digite seu nome? ')
                 participar.participar_evento(nome_evento, nome, eventos)
                 
@@ -85,5 +94,13 @@ while True:
                     listar_partici.listar_todos(eventos)
                 else:
                     print('Opção inválida! ')
+                    
+            elif opcao == '7':
+                nome_evento = input('Digite um nome de um evento ou não digite nada para verificar todos os valores: ')
+                valor_total.verificar_valor_arrecadado(nome_evento, eventos)
+            
+            elif opcao == '0':
+                print('\n     Saindo...')
+                break
     else:
         print('Opção inválida. Por favor, escolha 1 ou 2.')

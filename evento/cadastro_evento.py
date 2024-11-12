@@ -30,6 +30,21 @@ def cadastrar_eventos(nome_evento, data, classificacao, local_evento, lista_even
             break
         return True
     
-    evento = [nome_evento, f"{dia}/{mes}/{ano}", classificacao, local_evento, []]
+    while True:
+        pergunta = input('\nSeu evento será gratuito? (S/N):')
+        if pergunta == 'S':
+            print('Seu evento será de entrada gratuita! ')
+        elif pergunta == 'N':
+            while True:
+                valor = float(input('\nDigite um valor de entrada: '))
+                if valor < 0:
+                    print('Digite um valor válido! ')
+                else:
+                    break
+        break
+
+    valor = float(input('Digite um valor de entrada: '))
+    participantes = []
+    evento = [nome_evento, f"{dia}/{mes}/{ano}", classificacao, local_evento, participantes, valor]
     lista_eventos.append(evento)
     print(f'\nEvento {nome_evento} cadastrado com sucesso!')

@@ -1,4 +1,9 @@
 def participar_evento(nome_evento, participante, lista_eventos):
+    print('\n[ Catálogo de Eventos Disponíveis ]')
+    for evento in lista_eventos:
+            print(f'Nome: {evento[0]}, Data: {evento[1]}, Classificação: {evento[2]}, Local: {evento[3]}')
+        
+        
     for evento in lista_eventos:
         if evento[0] == nome_evento:
             if participante in evento[4]:
